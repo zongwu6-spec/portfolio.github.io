@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Designer | Portfolio</title>
+    <title>Portfolio | StudioPros Style</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
-        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        :root { --cursor-size: 20px; }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        /* 页面载入动画 */
+        .line-reveal { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1); }
+        @keyframes reveal { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+        /* 自定义光标 */
+        #cursor { width: var(--cursor-size); height: var(--cursor-size); background: #fff; border-radius: 50%; position: fixed; pointer-events: none; mix-blend-difference: transition: transform 0.2s; z-index: 9999; display: none; }
+        @media (min-width: 768px) { #cursor { display: block; } }
+
+        /* 项目卡片 hover */
+        .project-card img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .project-card:hover img { transform: scale(1.05); }
+        .project-card:hover .arrow { transform: translate(5px, -5px); }
     </style>
 </head>
-<body class="overflow-x-hidden">
-    <nav class="fixed top-0 w-full z-50 flex justify-between px-8 py-6 mix-blend-difference">
-        <div class="text-xl font-black">STUDIO.DESIGN</div>
-        <div class="space-x-6 text-xs font-bold uppercase tracking-widest">
-            <a href="#work" class="hover:text-zinc-400">Work</a>
-            <a href="mailto:your@email.com" class="hover:text-zinc-400">Contact</a>
+<body class="antialiased selection:bg-white selection:text-black">
+
+    <div id="cursor"></div>
+
+    <nav class="fixed top-0 w-full z-50 flex justify-between px-6 py-8 mix-blend-difference items-baseline">
+        <div class="text-2xl font-black tracking-tighter">PROJECT.VISUAL</div>
+        <div class="flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#work" class="hover:opacity-50">Work</a>
+            <a href="mailto:design@example.com" class="hover:opacity-50">Email</a>
         </div>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center px-8 md:px-20">
-        <h1 class="text-[12vw] leading-[0.85] font-black uppercase tracking-tighter">Visual<br><span class="text-zinc-800">Designer</span></h1>
-        <p class="mt-10 max-w-xl text-zinc-400 text-lg md:text-2xl font-light">4年深耕文旅、IP与行业峰会。用 3D 建模与品牌逻辑构建沉浸式视觉场域。</p>
-    </section>
-
-    <section id="work" class="px-8 md:px-20 py-24 bg-white text-black rounded-t-[40px]">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
-            <a href="theatre.html" class="md:col-span-8 reveal group">
-                <div class="overflow-hidden rounded-2xl aspect-video bg-zinc-100 mb-6">
-                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <h3 class="text-3xl font-black uppercase italic tracking-tighter">Orange Sky Golden Harvest</h3>
-                <p class="text-zinc-500 font-bold uppercase text-xs mt-2">Theatre Branding / 3D Space</p>
-            </a>
-
-            <a href="foodaily.html" class="md:col-span-4 reveal group self-center" style="transition-delay: 0.1s">
-                <div class="overflow-hidden rounded-2xl aspect-square bg-zinc-100 mb-6">
-                    <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <h3 class="text-xl font-black uppercase tracking-tighter">Foodaily Expo</h3>
-                <p class="text-zinc-500 font-bold uppercase text-xs mt-2">B2B Branding / Digital Design</p>
-            </a>
-
-            <a href="minions.html" class="md:col-span-12 reveal group" style="transition-delay: 0.2s">
-                <div class="overflow-hidden rounded-2xl aspect-[21/9] bg-zinc-100 mb-6">
-                    <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                </div>
-                <h3 class="text-3xl font-black uppercase tracking-tighter">Minions IP Campaign</h3>
-                <p class="text-zinc-500 font-bold uppercase text-xs mt-2">Global IP / Product Design</p>
-            </a>
+    <section class="h-screen flex flex-col justify-center px-6 md:px-16 overflow-hidden">
+        <div class="overflow-hidden">
+            <h1 class="text-[16vw] md:text-[14vw] leading-[0.8] font-black uppercase tracking-tighter line-reveal">
+                Visual<br><span class="text-zinc-800">Designer</span>
+            </h1>
+        </div>
+        <div class="mt-12 max-w-2xl text-zinc-400 text-lg md:text-2xl font-light leading-snug">
+            致力于文娱品牌、沉浸式剧场与IP视觉全案设计。以商业逻辑驱动美学，创造空间叙事的新可能。
         </div>
     </section>
 
-    <script>
-        const scrollReveal = () => {
-            document.querySelectorAll('.reveal').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
-            });
-        };
-        window.addEventListener('scroll', scrollReveal);
-        scrollReveal();
-    </script>
-</body>
-</html>
+    <section id="work" class="px-6 md:px-16 py-32 bg-[#f4f4f4] text-black rounded-t-[50px]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-32">
+            
+            <div class="md:col-span-8 flex flex-col">
+                <a href="theatre.html" class="project-card group">
+                    <div class="overflow-hidden bg-zinc-200 aspect-[4/5] md:aspect-video rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-8 flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">01 / Entertainment</span>
+                            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mt-2 italic">Orange Sky<br>Golden Harvest</h2>
+                        </div>
+                        <span class="arrow text-3xl transition-transform duration-300">↗</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="md:col-span-4 md:pt-40">
+                <a href="foodaily.html" class="project-card group">
+                    <div class="overflow-hidden bg-zinc-200 aspect-square rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?
