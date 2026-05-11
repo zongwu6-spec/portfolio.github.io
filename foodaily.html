@@ -2,22 +2,43 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodaily Project</title>
+    <title>Foodaily | Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-black font-sans antialiased">
-    <nav class="p-8 flex justify-between"><a href="index.html" class="font-black">← INDEX</a><span class="text-xs font-mono">B2B CASE 02</span></nav>
-    <header class="px-8 pt-20 pb-10 max-w-6xl mx-auto">
-        <h1 class="text-8xl font-black uppercase tracking-tighter mb-4">Foodaily</h1>
-        <div class="h-1 w-full bg-black mb-10"></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-xl font-light">
-            <p>主导 iSEE 全球奖及 FBIC 创博会视觉全案。将海量行业信息梳理为具一致性的视觉系统。</p>
-            <p>涵盖 Web 数字化基建、小程序交互、以及数千平米展会现场的导视逻辑。</p>
+<body class="bg-white text-black antialiased font-['Inter']">
+    <nav class="fixed top-0 w-full z-50 p-8 flex justify-between mix-blend-difference">
+        <a href="index.html" class="font-black tracking-tighter uppercase">← Back</a>
+        <span class="text-[10px] font-mono opacity-30 italic">Industry Expo / 02</span>
+    </nav>
+
+    <header class="pt-40 px-6 md:px-16 mb-32">
+        <h1 class="text-[12vw] leading-[0.8] font-black uppercase tracking-tighter">Foodaily<br>Expo System</h1>
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-start gap-10 border-t border-zinc-100 pt-10">
+            <p class="text-3xl font-light max-w-2xl leading-tight">为千人级行业盛会构建从数字化基建到大型展陈的<span class="font-black italic">多维视觉秩序</span>。</p>
+            <div class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                <p>Web UI / WeChat Mini-Program</p>
+                <p>Exhibition Design / VI System</p>
+            </div>
         </div>
     </header>
-    <section class="px-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto pb-40">
-        <div class="md:col-span-2 rounded-3xl bg-zinc-100 aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover"></div>
-        <div class="rounded-3xl bg-zinc-100 aspect-square overflow-hidden"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
+
+    <section class="px-6 md:px-16 space-y-10 pb-40">
+        <div class="bg-zinc-100 rounded-3xl aspect-video overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="aspect-square bg-zinc-100 rounded-3xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-square bg-zinc-100 rounded-3xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+            </div>
+        </div>
     </section>
+
+    <footer class="py-40 text-center bg-black text-white">
+        <a href="minions.html" class="text-4xl font-black uppercase hover:opacity-50 transition italic">Next Case: Minions ↗</a>
+    </footer>
 </body>
 </html>
