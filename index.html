@@ -3,58 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selected Works | IT-SIMPLE Style</title>
+    <title>Visual Designer | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #F4F4F4; color: #000; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { background: #F4F4F4; color: #111; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* IT-SIMPLE 极精细文字系统 */
+        /* IT-SIMPLE 极细文字系统 */
         .micro-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #999; }
-        .intro-text { font-size: 14px; line-height: 1.8; color: #333; font-weight: 400; max-width: 600px; }
         .project-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 18px; }
         .project-info { font-size: 10px; color: #BBB; margin-top: 4px; text-transform: uppercase; }
+        
+        /* 核心描述文本 */
+        .desc-text { font-size: 13px; line-height: 2; color: #555; font-weight: 400; }
+        .desc-title { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; display: block; color: #000; }
 
-        /* 动效：图片缩放与呼吸感 */
+        /* 动效：页面载入与悬停 */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         .img-wrapper { overflow: hidden; background: #EAEAEA; transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); }
         .project-card:hover .img-wrapper { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.03); }
         .img-wrapper img { transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1); }
         .project-card:hover img { transform: scale(1.05); }
 
-        /* 页面载入动效 */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        .nav-link { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; }
+        .section-line { border-top: 1px solid #E5E5E5; margin-top: 8rem; padding-top: 2rem; }
     </style>
 </head>
 <body class="antialiased selection:bg-black selection:text-white">
 
     <nav class="fixed top-0 w-full z-50 flex justify-between px-8 py-10 items-center">
-        <div class="nav-link">Studio.Portfolio</div>
+        <div class="text-[10px] font-black uppercase tracking-[0.3em]">Studio.Visual</div>
         <div class="flex space-x-12">
-            <a href="#work" class="nav-link hover:opacity-40 transition">Work</a>
-            <a href="mailto:your@email.com" class="nav-link hover:opacity-40 transition">Contact</a>
+            <a href="#work" class="text-[10px] font-bold uppercase tracking-widest hover:opacity-40 transition">Work</a>
+            <a href="mailto:your@email.com" class="text-[10px] font-bold uppercase tracking-widest hover:opacity-40 transition">Contact</a>
         </div>
     </nav>
 
     <main class="px-6 md:px-12 pt-48 pb-32">
         
-        <section class="grid grid-cols-1 md:grid-cols-12 mb-64 reveal">
+        <section class="grid grid-cols-1 md:grid-cols-12 mb-40 reveal">
             <div class="md:col-span-2">
-                <span class="micro-label">About / 001</span>
+                <span class="micro-label">Identity / 01</span>
             </div>
-            <div class="md:col-start-4 md:col-span-8 space-y-8">
-                <h1 class="text-xl md:text-2xl font-light leading-tight italic">
+            <div class="md:col-start-4 md:col-span-8 space-y-10">
+                <h1 class="text-xl md:text-2xl font-light leading-tight italic max-w-2xl">
                     4年深耕文旅、体育及快消行业的全链路视觉设计，擅长将品牌叙事与商业空间深度融合。
                 </h1>
-                <p class="intro-text">
+                <p class="desc-text max-w-xl">
                     具备从 0 到 1 的视觉体系构建能力，精通 AIGC 工具与 Rhino 建模，能够通过 3D 视觉模拟驱动线下物料的高效落地。曾服务 Minions（小黄人） 等国际顶级 IP，具备极强的版权沟通与衍生品开发经验。
                 </p>
             </div>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-48" id="work">
+        <section class="section-line grid grid-cols-1 md:grid-cols-12 gap-y-16 reveal">
+            <div class="md:col-span-2">
+                <span class="micro-label">Expertise / 02</span>
+            </div>
+            <div class="md:col-start-4 md:col-span-3">
+                <span class="desc-title italic">01. 品牌视觉全案</span>
+                <p class="desc-text text-xs">负责剧院品牌及季度演出剧目的核心视觉开发，确保视觉语言从线上宣发到线下物理空间的高度统一。</p>
+            </div>
+            <div class="md:col-start-7 md:col-span-3">
+                <span class="desc-title italic">02. 体验式美陈</span>
+                <p class="desc-text text-xs">结合营销节点，利用 Rhino 进行剧场互动装置与主题展览的 3D 建模及渲染，提升观众沉浸感。</p>
+            </div>
+            <div class="md:col-start-10 md:col-span-3">
+                <span class="desc-title italic">03. IP 商业转化</span>
+                <p class="desc-text text-xs">独立设计演出周边文创及直播视觉贴片，通过高质感的视觉呈现助力剧场品牌溢价。</p>
+            </div>
+        </section>
+
+        <div class="section-line grid grid-cols-1 md:grid-cols-12 gap-y-48" id="work">
+            
+            <div class="md:col-span-12 mb-10"><span class="micro-label">Selected Works / 03</span></div>
 
             <div class="md:col-span-8 reveal">
                 <a href="theatre.html" class="project-card group block">
@@ -62,61 +83,10 @@
                         <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
                     </div>
                     <h2 class="project-title">Orange Sky Golden Harvest</h2>
-                    <p class="project-info">Theatre Branding / Spatial Design / 2024</p>
+                    <p class="project-info">Entertainment Branding / 3D Spatial / 2024</p>
                 </a>
             </div>
 
             <div class="md:col-start-9 md:col-span-4 md:mt-32 reveal">
                 <a href="foodaily.html" class="project-card group block">
                     <div class="img-wrapper aspect-[3/4]">
-                        <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover">
-                    </div>
-                    <h2 class="project-title">Foodaily Expo</h2>
-                    <p class="project-info">Industry Event / System UI / 2023</p>
-                </a>
-            </div>
-
-            <div class="md:col-start-2 md:col-span-10 reveal">
-                <a href="minions.html" class="project-card group block">
-                    <div class="img-wrapper aspect-video">
-                        <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex justify-between items-baseline">
-                        <h2 class="project-title">Minions Sport Global</h2>
-                        <p class="project-info">Licensed IP / Assets Dev / 2022</p>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="px-8 py-24 border-t border-zinc-200 mt-40">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-            <div class="micro-label text-black italic font-bold">WUSTUDIO</div>
-            <div class="flex space-x-12">
-                <div><span class="micro-label">Social</span>
-                    <div class="flex flex-col mt-4 space-y-2 text-[10px] uppercase font-bold tracking-widest">
-                        <a href="#" class="hover:opacity-40">Behance</a>
-                        <a href="#" class="hover:opacity-40">Instagram</a>
-                    </div>
-                </div>
-                <div><span class="micro-label">Contact</span>
-                    <div class="mt-4 text-[10px] uppercase font-bold tracking-widest">
-                        <a href="mailto:your@email.com" class="hover:opacity-40">hello@wustudio.design</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
-</body>
-</html>
