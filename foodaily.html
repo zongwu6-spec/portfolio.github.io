@@ -2,43 +2,57 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodaily | Project</title>
+    <title>Project Details | Foodaily</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body { background: #fff; color: #000; font-family: 'Inter', sans-serif; }
+        .hero-img { height: 90vh; overflow: hidden; clip-path: inset(0% 0% 0% 0%); animation: imgOpen 1.8s cubic-bezier(0.2, 1, 0.3, 1); }
+        @keyframes imgOpen { from { clip-path: inset(10% 10% 10% 10%); } to { clip-path: inset(0% 0% 0% 0%); } }
+        .archive-text { font-size: 11px; line-height: 2; letter-spacing: 0.05em; color: #666; }
+        .archive-title { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; color: #000; }
+    </style>
 </head>
-<body class="bg-white text-black antialiased font-['Inter']">
-    <nav class="fixed top-0 w-full z-50 p-8 flex justify-between mix-blend-difference">
-        <a href="index.html" class="font-black tracking-tighter uppercase">← Back</a>
-        <span class="text-[10px] font-mono opacity-30 italic">Industry Expo / 02</span>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-50 p-10 flex justify-between mix-blend-difference text-black">
+        <a href="index.html" class="text-[11px] font-bold uppercase tracking-widest">← Index</a>
     </nav>
 
-    <header class="pt-40 px-6 md:px-16 mb-32">
-        <h1 class="text-[12vw] leading-[0.8] font-black uppercase tracking-tighter">Foodaily<br>Expo System</h1>
-        <div class="mt-20 flex flex-col md:flex-row justify-between items-start gap-10 border-t border-zinc-100 pt-10">
-            <p class="text-3xl font-light max-w-2xl leading-tight">为千人级行业盛会构建从数字化基建到大型展陈的<span class="font-black italic">多维视觉秩序</span>。</p>
-            <div class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                <p>Web UI / WeChat Mini-Program</p>
-                <p>Exhibition Design / VI System</p>
-            </div>
-        </div>
-    </header>
+    <section class="hero-img bg-zinc-100">
+        <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
+    </section>
 
-    <section class="px-6 md:px-16 space-y-10 pb-40">
-        <div class="bg-zinc-100 rounded-3xl aspect-video overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="aspect-square bg-zinc-100 rounded-3xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+    <section class="px-6 md:px-12 py-32 grid grid-cols-1 md:grid-cols-12 gap-16">
+        <div class="md:col-span-4">
+            <div class="sticky top-32">
+                <h1 class="text-4xl font-light mb-16 italic">Foodaily<br>Expo System</h1>
+                <div class="space-y-12">
+                    <div><span class="archive-title italic underline">Services</span><p class="archive-text uppercase">Visual Identity System<br>Web UI / Mini Program<br>Spatial Signage</p></div>
+                    <div><span class="archive-title italic underline">Industry</span><p class="archive-text uppercase">Food & Beverage / B2B Expo</p></div>
+                </div>
             </div>
-            <div class="aspect-square bg-zinc-100 rounded-3xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="md:col-span-8">
+            <div class="archive-text text-lg text-black leading-relaxed mb-24 max-w-xl">
+                为 Foodaily 每日食品旗下 iSEE 全球奖及 FBIC 创博会构建全链路视觉体系。设计核心在于将纷繁复杂的行业信息转化为极简且具备权威感的符号语言。从数字化门户到数千平米的线下展陈，我们确保了品牌在多维度空间的秩序感。
+            </div>
+            
+            <div class="space-y-12">
+                <div class="bg-zinc-50 overflow-hidden aspect-video"><img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover"></div>
+                <div class="bg-zinc-50 overflow-hidden aspect-square max-w-2xl mx-auto"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover"></div>
+                <div class="grid grid-cols-2 gap-12">
+                    <div class="bg-zinc-50 overflow-hidden aspect-[4/5]"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
+                    <div class="bg-zinc-50 overflow-hidden aspect-[4/5]"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-40 text-center bg-black text-white">
-        <a href="minions.html" class="text-4xl font-black uppercase hover:opacity-50 transition italic">Next Case: Minions ↗</a>
+    <footer class="py-32 text-center bg-zinc-50">
+        <a href="minions.html" class="text-xs font-bold uppercase tracking-[0.2em] hover:opacity-50 transition">Next Project: Minions Sport →</a>
     </footer>
+
 </body>
 </html>
