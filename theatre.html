@@ -2,57 +2,33 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details | Theatre</title>
+    <title>Theatre | Orange Sky Golden Harvest</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #fff; color: #000; font-family: 'Inter', sans-serif; }
-        .hero-img { height: 90vh; overflow: hidden; clip-path: inset(0% 0% 0% 0%); animation: imgOpen 1.8s cubic-bezier(0.2, 1, 0.3, 1); }
-        @keyframes imgOpen { from { clip-path: inset(10% 10% 10% 10%); } to { clip-path: inset(0% 0% 0% 0%); } }
-        .archive-text { font-size: 11px; line-height: 2; letter-spacing: 0.05em; color: #666; }
-        .archive-title { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; color: #000; }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; animation: fadeIn 1s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .comparison-slider { position: relative; width: 100%; height: 60vh; overflow: hidden; border-radius: 1rem; }
+        #before { position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 10; border-right: 3px solid #fff; overflow: hidden; }
+        #before img { width: 100vw; height: 60vh; object-fit: cover; filter: grayscale(1) brightness(0.6); }
     </style>
 </head>
-<body class="antialiased">
-
-    <nav class="fixed top-0 w-full z-50 p-10 flex justify-between mix-blend-difference text-white">
-        <a href="index.html" class="text-[11px] font-bold uppercase tracking-widest">← Index</a>
-    </nav>
-
-    <section class="hero-img bg-zinc-100">
-        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
-    </section>
-
-    <section class="px-6 md:px-12 py-32 grid grid-cols-1 md:grid-cols-12 gap-16">
-        <div class="md:col-span-4">
-            <div class="sticky top-32">
-                <h1 class="text-4xl font-light mb-16 italic">Orange Sky<br>Golden Harvest</h1>
-                <div class="space-y-12">
-                    <div><span class="archive-title italic underline">Credits</span><p class="archive-text uppercase">Art Director / Space Design<br>3D Modeling / Implementation</p></div>
-                    <div><span class="archive-title italic underline">Date</span><p class="archive-text uppercase">January 2024 - PRESENT</p></div>
-                </div>
-            </div>
+<body>
+    <nav class="p-8"><a href="index.html" class="font-bold tracking-tighter hover:opacity-50 transition">← BACK</a></nav>
+    <header class="px-8 py-20 max-w-6xl mx-auto">
+        <h1 class="text-7xl font-black uppercase italic mb-6">Orange Sky<br>Golden Harvest</h1>
+        <p class="text-zinc-400 text-xl max-w-2xl">通过 Rhino 3D 建模模拟真实光影感，为线下剧场打造沉浸式导视系统与美陈装置。</p>
+    </header>
+    <section class="px-8 pb-40 max-w-6xl mx-auto">
+        <div class="comparison-slider" id="slider">
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
+            <div id="before"><img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=1600"></div>
         </div>
-        
-        <div class="md:col-span-8">
-            <div class="archive-text text-lg text-black leading-relaxed mb-24 max-w-xl">
-                为橙天嘉禾剧场打造的视觉重塑方案。通过对剧场物理空间的深度调研，我们将品牌叙事转化为一套完整的导视与美陈系统。利用 Rhino 3D 建模确保了设计在落地阶段的精准还原。
-            </div>
-            
-            <div class="space-y-12">
-                <div class="bg-zinc-50 overflow-hidden"><img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=1600" class="w-full"></div>
-                <div class="grid grid-cols-2 gap-12">
-                    <div class="bg-zinc-50 overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
-                    <div class="bg-zinc-50 overflow-hidden aspect-[3/4]"><img src="https://images.unsplash.com/photo-1550684847-75bdda21cc95?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
-                </div>
-                <div class="bg-zinc-50 overflow-hidden"><img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&q=80&w=1600" class="w-full"></div>
-            </div>
-        </div>
+        <p class="mt-4 text-xs text-center text-zinc-600 uppercase tracking-widest">Swipe / Move Mouse to Compare: Model vs Reality</p>
     </section>
-
-    <footer class="py-32 text-center bg-zinc-50">
-        <a href="foodaily.html" class="text-xs font-bold uppercase tracking-[0.2em] hover:opacity-50 transition">Next Project: Foodaily →</a>
-    </footer>
-
+    <script>
+        const s = document.getElementById('slider'), b = document.getElementById('before');
+        s.addEventListener('mousemove', e => b.style.width = (e.offsetX / s.offsetWidth * 100) + '%');
+    </script>
 </body>
 </html>
