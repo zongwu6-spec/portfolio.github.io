@@ -3,150 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Designer | Wix Studio Style</title>
+    <title>Selected Works | IT-Simple Style</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        
-        /* Wix Studio 风格巨型文字 */
-        .giant-text {
-            font-size: 18vw;
-            line-height: 0.8;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
-            margin-left: -0.05em;
-        }
-        .text-outline {
-            color: transparent;
-            -webkit-text-stroke: 1.5px #333;
-        }
-
-        /* 滚动平滑淡入 */
-        .reveal { opacity: 0; transform: translateY(100px); transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); }
+        body { background: #fff; color: #000; font-family: 'Inter', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* 磁吸光标效果 */
-        #cursor {
-            width: 30px; height: 30px; background: #fff; border-radius: 50%;
-            position: fixed; pointer-events: none; z-index: 9999;
-            mix-blend-difference: transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: none;
-        }
-        @media (min-width: 768px) { #cursor { display: block; } }
-
-        /* 全屏网格布局 */
-        .project-section { border-top: 1px solid #1a1a1a; }
-        .img-container { transition: clip-path 0.8s cubic-bezier(0.7, 0, 0.3, 1); clip-path: inset(0% 0% 0% 0%); }
-        .group:hover .img-container { clip-path: inset(2% 2% 2% 2%); }
+        .project-card img { transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1); }
+        .project-card:hover img { transform: scale(1.03); }
+        .nav-link { font-size: 11px; letter-spacing: 0.1em; font-weight: 600; }
     </style>
 </head>
-<body class="antialiased selection:bg-blue-600 selection:text-white">
+<body class="antialiased">
 
-    <div id="cursor"></div>
-
-    <nav class="fixed top-0 w-full z-50 flex justify-between px-10 py-10 mix-blend-difference items-center">
-        <div class="text-xl font-black tracking-tighter uppercase">Portfolio Studio</div>
-        <div class="flex space-x-12 text-[11px] font-bold uppercase tracking-[0.2em]">
-            <a href="#work" class="hover:text-blue-500 transition">Work</a>
-            <a href="mailto:your@email.com" class="hover:text-blue-500 transition">Contact</a>
+    <nav class="fixed top-0 w-full z-50 flex justify-between px-10 py-10 items-center mix-blend-difference">
+        <div class="nav-link uppercase">Studio.Portfolio</div>
+        <div class="flex space-x-12">
+            <a href="#work" class="nav-link uppercase hover:opacity-50">Work</a>
+            <a href="mailto:design@example.com" class="nav-link uppercase hover:opacity-50">Contact</a>
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center px-6 md:px-10 py-32">
-        <div class="reveal active">
-            <h1 class="giant-text">CRAFTING</h1>
-            <h1 class="giant-text text-outline">VISUAL</h1>
-            <h1 class="giant-text">SYSTEMS</h1>
-        </div>
-        <div class="mt-20 md:flex justify-between items-end border-t border-zinc-800 pt-10 reveal active">
-            <p class="max-w-xl text-zinc-500 text-xl font-light uppercase tracking-tight italic">
-                致力于文娱品牌、沉浸式剧场与IP视觉全案设计。
-            </p>
-            <div class="text-[10px] font-mono text-zinc-600 mt-10 md:mt-0">
-                SCROLL TO EXPLORE ↓
+    <section id="work" class="px-6 md:px-12 pt-40 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
+            
+            <div class="reveal">
+                <a href="theatre.html" class="project-card group block">
+                    <div class="overflow-hidden bg-zinc-50 aspect-[4/5] md:aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-6 flex justify-between items-baseline">
+                        <h2 class="text-xs font-bold uppercase tracking-widest">Orange Sky Golden Harvest</h2>
+                        <span class="text-[10px] text-zinc-400">2024 — Theatre Branding</span>
+                    </div>
+                </a>
             </div>
+
+            <div class="reveal md:mt-40">
+                <a href="foodaily.html" class="project-card group block">
+                    <div class="overflow-hidden bg-zinc-50 aspect-[4/5] md:aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-6 flex justify-between items-baseline">
+                        <h2 class="text-xs font-bold uppercase tracking-widest">Foodaily Expo</h2>
+                        <span class="text-[10px] text-zinc-400">2023 — Industry</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="reveal md:col-span-2 max-w-4xl mx-auto w-full">
+                <a href="minions.html" class="project-card group block">
+                    <div class="overflow-hidden bg-zinc-50 aspect-video">
+                        <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-6 flex justify-between items-baseline">
+                        <h2 class="text-xs font-bold uppercase tracking-widest">Minions Sport</h2>
+                        <span class="text-[10px] text-zinc-400">2022 — IP Campaign</span>
+                    </div>
+                </a>
+            </div>
+
         </div>
     </section>
 
-    <section id="work" class="project-section bg-black">
-        
-        <a href="theatre.html" class="group block project-section reveal">
-            <div class="flex flex-col md:flex-row min-h-[80vh]">
-                <div class="md:w-1/2 p-10 flex flex-col justify-between">
-                    <span class="text-xs font-mono text-zinc-600">01 / ENTERTAINMENT</span>
-                    <div>
-                        <h2 class="text-6xl md:text-[8vw] font-black uppercase leading-none mb-6">Orange Sky</h2>
-                        <p class="text-zinc-500 max-w-sm uppercase text-xs font-bold tracking-widest leading-loose">剧场品牌视觉重塑 / 3D 空间模拟 / 线下落地监制</p>
-                    </div>
-                    <div class="text-4xl group-hover:translate-x-4 transition-transform italic font-black">VIEW PROJECT →</div>
-                </div>
-                <div class="md:w-1/2 img-container overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover group-hover:scale-110 transition duration-[2s]">
-                </div>
-            </div>
-        </a>
-
-        <a href="foodaily.html" class="group block project-section reveal">
-            <div class="flex flex-col md:flex-row-reverse min-h-[80vh]">
-                <div class="md:w-1/2 p-10 flex flex-col justify-between">
-                    <span class="text-xs font-mono text-zinc-600 text-right">02 / INDUSTRY EXPO</span>
-                    <div class="text-right">
-                        <h2 class="text-6xl md:text-[8vw] font-black uppercase leading-none mb-6">Foodaily</h2>
-                        <p class="text-zinc-500 ml-auto max-w-sm uppercase text-xs font-bold tracking-widest leading-loose">行业峰会全链路视觉系统 / 数字化基建 UI</p>
-                    </div>
-                    <div class="text-4xl text-right group-hover:-translate-x-4 transition-transform italic font-black">← CASE STUDY</div>
-                </div>
-                <div class="md:w-1/2 img-container overflow-hidden border-r border-zinc-900">
-                    <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover group-hover:scale-110 transition duration-[2s]">
-                </div>
-            </div>
-        </a>
-
-        <a href="minions.html" class="group block project-section reveal">
-            <div class="relative h-[90vh] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-[3s]">
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                    <span class="text-xs font-mono text-zinc-400 mb-6 tracking-widest">03 / GLOBAL IP CAMPAIGN</span>
-                    <h2 class="text-[12vw] font-black uppercase leading-none mb-10 italic">Minions Sport</h2>
-                    <div class="bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-tighter hover:scale-110 transition">Enter Experience</div>
-                </div>
-            </div>
-        </a>
-
-    </section>
-
-    <footer class="py-40 px-10 border-t border-zinc-900">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <h2 class="text-4xl md:text-6xl font-black uppercase leading-[0.9]">Ready to<br>collaborate?</h2>
-            <div class="flex flex-col justify-between">
-                <a href="mailto:your@email.com" class="text-3xl font-light underline underline-offset-8 decoration-1 hover:text-blue-500 transition">hello@studio-design.com</a>
-                <div class="mt-20 flex space-x-10 text-[10px] font-bold uppercase tracking-widest opacity-40">
-                    <a href="#">Instagram</a> / <a href="#">Behance</a> / <a href="#">LinkedIn</a>
-                </div>
-            </div>
-        </div>
+    <footer class="py-40 text-center border-t border-zinc-100 mx-12">
+        <p class="text-[10px] font-bold uppercase tracking-widest opacity-30">© 2026 Your Studio. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // 光标跟随
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.transform = `translate3d(${e.clientX - 15}px, ${e.clientY - 15}px, 0)`;
-        });
-
-        // 悬停交互
-        document.querySelectorAll('a').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.style.transform += ' scale(3)');
-            el.addEventListener('mouseleave', () => cursor.style.transform = cursor.style.transform.replace(' scale(3)', ''));
-        });
-
-        // 滚动淡入
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
