@@ -2,57 +2,19 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details | Foodaily</title>
+    <title>Foodaily | iSEE Global Awards</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
-    <style>
-        body { background: #fff; color: #000; font-family: 'Inter', sans-serif; }
-        .hero-img { height: 90vh; overflow: hidden; clip-path: inset(0% 0% 0% 0%); animation: imgOpen 1.8s cubic-bezier(0.2, 1, 0.3, 1); }
-        @keyframes imgOpen { from { clip-path: inset(10% 10% 10% 10%); } to { clip-path: inset(0% 0% 0% 0%); } }
-        .archive-text { font-size: 11px; line-height: 2; letter-spacing: 0.05em; color: #666; }
-        .archive-title { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; color: #000; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="antialiased">
-
-    <nav class="fixed top-0 w-full z-50 p-10 flex justify-between mix-blend-difference text-black">
-        <a href="index.html" class="text-[11px] font-bold uppercase tracking-widest">← Index</a>
-    </nav>
-
-    <section class="hero-img bg-zinc-100">
-        <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
+<body class="bg-white text-black font-['Inter'] antialiased">
+    <nav class="p-8 flex justify-between"><a href="index.html" class="font-black hover:opacity-50 transition">← INDEX</a><span class="text-xs font-mono text-zinc-400">CASE 02</span></nav>
+    <header class="px-8 pt-20 pb-10 max-w-6xl mx-auto border-b border-zinc-100">
+        <h1 class="text-8xl font-black uppercase tracking-tighter mb-4">Foodaily</h1>
+        <p class="text-zinc-600 text-lg max-w-xl">千人级行业盛会的视觉系统与数字化 Web UI 设计。将 B 端行业属性梳理为清晰、高质感的视觉符号。</p>
+    </header>
+    <section class="px-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto pb-40">
+        <div class="md:col-span-2 rounded-3xl bg-zinc-100 aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover"></div>
+        <div class="rounded-3xl bg-zinc-100 aspect-square overflow-hidden"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
     </section>
-
-    <section class="px-6 md:px-12 py-32 grid grid-cols-1 md:grid-cols-12 gap-16">
-        <div class="md:col-span-4">
-            <div class="sticky top-32">
-                <h1 class="text-4xl font-light mb-16 italic">Foodaily<br>Expo System</h1>
-                <div class="space-y-12">
-                    <div><span class="archive-title italic underline">Services</span><p class="archive-text uppercase">Visual Identity System<br>Web UI / Mini Program<br>Spatial Signage</p></div>
-                    <div><span class="archive-title italic underline">Industry</span><p class="archive-text uppercase">Food & Beverage / B2B Expo</p></div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="md:col-span-8">
-            <div class="archive-text text-lg text-black leading-relaxed mb-24 max-w-xl">
-                为 Foodaily 每日食品旗下 iSEE 全球奖及 FBIC 创博会构建全链路视觉体系。设计核心在于将纷繁复杂的行业信息转化为极简且具备权威感的符号语言。从数字化门户到数千平米的线下展陈，我们确保了品牌在多维度空间的秩序感。
-            </div>
-            
-            <div class="space-y-12">
-                <div class="bg-zinc-50 overflow-hidden aspect-video"><img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover"></div>
-                <div class="bg-zinc-50 overflow-hidden aspect-square max-w-2xl mx-auto"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover"></div>
-                <div class="grid grid-cols-2 gap-12">
-                    <div class="bg-zinc-50 overflow-hidden aspect-[4/5]"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
-                    <div class="bg-zinc-50 overflow-hidden aspect-[4/5]"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-32 text-center bg-zinc-50">
-        <a href="minions.html" class="text-xs font-bold uppercase tracking-[0.2em] hover:opacity-50 transition">Next Project: Minions Sport →</a>
-    </footer>
-
 </body>
 </html>
