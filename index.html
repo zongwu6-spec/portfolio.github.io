@@ -3,155 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WUSTUDIO | Visual Designer</title>
+    <title>WUZONG | 2025 Visual Design Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .section-line { border-top: 1px solid #1a1a1a; margin-top: 5rem; margin-bottom: 2rem; }
+        body { background: #F4F4F4; color: #111; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* 动效：页面载入逐行浮现 */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        /* IT-SIMPLE 极致精细文字系统 */
+        .micro-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #999; }
+        .project-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 18px; }
+        .project-info { font-size: 10px; color: #BBB; margin-top: 4px; text-transform: uppercase; }
+        
+        /* 核心描述文本 */
+        .desc-text { font-size: 13px; line-height: 2; color: #555; font-weight: 400; }
+        .desc-title { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; display: block; color: #000; }
+
+        /* 动效逻辑 */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        .img-wrapper { overflow: hidden; background: #EAEAEA; transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); }
+        .project-card:hover .img-wrapper { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.03); }
+        .img-wrapper img { transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1); }
+        .project-card:hover img { transform: scale(1.05); }
 
-        /* 图片悬停效果：磁吸微缩放 */
-        .img-container img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .group:hover .img-container img { transform: scale(1.05); }
-
-        /* 文本排版优化 */
-        .p-text { font-size: 14px; line-height: 1.8; color: #888; font-weight: 300; }
+        .section-line { border-top: 1px solid #E5E5E5; margin-top: 8rem; padding-top: 2rem; }
     </style>
 </head>
-<body class="antialiased selection:bg-zinc-800 selection:text-white">
+<body class="antialiased selection:bg-black selection:text-white">
 
-    <nav class="fixed top-0 w-full z-50 flex justify-center py-10 mix-blend-difference items-center">
-        <div class="text-xs font-black uppercase tracking-[0.5em] text-white/50">WUSTUDIO</div>
+    <nav class="fixed top-0 w-full z-50 flex justify-between px-8 py-10 items-center">
+        <div class="text-[10px] font-black uppercase tracking-[0.3em]">WUZONG.STUDIO</div>
+        <div class="flex space-x-12">
+            <a href="#work" class="text-[10px] font-bold uppercase tracking-widest hover:opacity-40 transition">Works</a>
+            <a href="mailto:hello@wuzong.design" class="text-[10px] font-bold uppercase tracking-widest hover:opacity-40 transition">Contact</a>
+        </div>
     </nav>
 
-    <section class="min-h-[80vh] flex flex-col justify-center px-6 md:px-20 py-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start reveal">
+    <main class="px-6 md:px-12 pt-48 pb-32">
+        
+        <section class="grid grid-cols-1 md:grid-cols-12 mb-40 reveal">
             <div class="md:col-span-2">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border-4 border-white">
-                    <span class="text-4xl font-black text-black">WU</span>
-                </div>
+                <span class="micro-label">Identity / 01</span>
             </div>
-            <div class="md:col-start-4 md:col-span-8 space-y-8">
-                <span class="text-xs font-mono text-zinc-600 uppercase">Hello</span>
-                <h1 class="text-2xl md:text-3xl font-black leading-snug">我是 WU，一名专注文娱、IP与剧场空间的品牌视觉设计师。致力于基于 Rhino 建模与平面逻辑的商业体验设计。</h1>
-                <p class="p-text">喜欢简单，追求高效。让创意能落地，简单好用是我们一贯的出品原则。</p>
+            <div class="md:col-start-4 md:col-span-8 space-y-10">
+                <h1 class="text-xl md:text-2xl font-light leading-tight italic max-w-2xl">
+                    4年深耕文旅、体育及快消行业的全链路视觉设计，擅长将品牌叙事与商业空间深度融合。
+                </h1>
+                <p class="desc-text max-w-xl">
+                    具备从 0 到 1 的视觉体系构建能力，精通 AIGC 工具与 Rhino 建模，能够通过 3D 视觉模拟驱动线下物料的高效落地。曾服务 Minions（小黄人）等国际顶级 IP，具备极强的版权沟通与衍生品开发经验。
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="px-6 md:px-20 pb-32">
-        <div class="section-line reveal"></div>
-        <div class="flex justify-between items-baseline reveal">
-            <h2 class="text-xs font-black uppercase tracking-[0.3em] mb-10">PURPOSES</h2>
-            <span class="text-[10px] text-zinc-700">设计哲学</span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
-            <div class="md:col-span-3">
-                <div class="border border-zinc-800 rounded-xl aspect-[3/4] flex items-center justify-center p-6 opacity-30">
-                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-contain filter grayscale invert">
-                </div>
+        <section class="section-line grid grid-cols-1 md:grid-cols-12 gap-y-16 reveal">
+            <div class="md:col-span-2">
+                <span class="micro-label">Capabilities / 02</span>
             </div>
-            <div class="md:col-start-5 md:col-span-7 space-y-10">
-                <p class="text-xl leading-relaxed text-zinc-300">懂需求、能落地。我们将品牌基因注入多维视场域，用有质感的物理落地方案打造有转化、高效运营的设计内容。</p>
-                <div class="flex flex-wrap gap-4 text-xs font-mono text-zinc-500">
-                    <span class="px-3 py-1 border border-zinc-800 rounded-full">从概念推演</span>
-                    <span class="text-zinc-800">→</span>
-                    <span class="px-3 py-1 border border-zinc-800 rounded-full">Rhino 建模模拟</span>
-                    <span class="text-zinc-800">→</span>
-                    <span class="px-3 py-1 border border-zinc-800 rounded-full">物料监制落地</span>
-                </div>
+            <div class="md:col-start-4 md:col-span-3">
+                <span class="desc-title italic">品牌识别系统</span>
+                <p class="desc-text text-xs text-zinc-400">打造 iSEE 全球奖等大型奖项品牌系统，涵盖视觉升级、标准化规范及展览会议传播，从 ToB 视角重塑品牌形象。</p>
             </div>
-        </div>
-    </section>
-
-    <section id="work" class="px-6 md:px-20 pb-40">
-        <div class="section-line reveal"></div>
-        <div class="flex justify-between items-baseline reveal">
-            <h2 class="text-xs font-black uppercase tracking-[0.3em] mb-16">Selected Cases</h2>
-            <span class="text-[10px] text-zinc-700">核心案例</span>
-        </div>
-
-        <div class="space-y-40">
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
-                <div class="md:col-span-4 space-y-6">
-                    <h3 class="text-xl font-bold uppercase tracking-tight italic">Orange Sky<br>Golden Harvest</h3>
-                    <p class="p-text">剧场品牌视觉重塑方案。基于剧场暗光环境与人流动线分析，构建系统化的导视与美陈装置。</p>
-                    <a href="theatre.html" class="text-sm font-bold text-zinc-500 hover:text-white transition">Cases ↗</a>
-                </div>
-                <div class="md:col-start-6 md:col-span-7 group block">
-                    <div class="img-container overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 aspect-video">
-                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
-                    </div>
-                </div>
+            <div class="md:col-start-7 md:col-span-3">
+                <span class="desc-title italic">体验空间与美陈</span>
+                <p class="desc-text text-xs text-zinc-400">结合剧场品牌运营，利用 Rhino 建模打破舞台剧“第四面墙”，实现从建筑之形到室内沉浸式美陈的视觉转化。</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
-                <div class="md:col-span-7 group block">
-                    <div class="img-container overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 aspect-[4/3]">
-                        <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="md:col-start-9 md:col-span-4 space-y-6 md:text-right">
-                    <h3 class="text-xl font-bold uppercase tracking-tighter">Foodaily</h3>
-                    <p class="p-text ml-auto">峰会全案视觉体系。涵盖数字化 Web UI、小程序终端与数千平米线下展陈空间的秩序构建。</p>
-                    <a href="foodaily.html" class="text-sm font-bold text-zinc-500 hover:text-white transition">Cases ↗</a>
-                </div>
+            <div class="md:col-start-10 md:col-span-3">
+                <span class="desc-title italic">IP 衍生品开发</span>
+                <p class="desc-text text-xs text-zinc-400">独立主导小黄人趣跑等国际 IP 的衍生品全链设计，涵盖跑手装备、服饰及包装设计，覆盖全国 7+ 城市。</p>
             </div>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center reveal">
-                <div class="md:col-span-5 space-y-6">
-                    <h3 class="text-xl font-bold uppercase tracking-tighter italic">Minions Sport</h3>
-                    <p class="p-text">全球 IP 版权管控与衍生品开发。严格执行版权方指南，激活 IP 的运动时尚视觉潜力。</p>
-                    <a href="minions.html" class="text-sm font-bold text-zinc-500 hover:text-white transition">Cases ↗</a>
-                </div>
-                <div class="md:col-span-12 group block mt-10">
-                    <div class="img-container overflow-hidden rounded-2xl bg-zinc-900 border border-zinc-800 aspect-[21/9]">
-                        <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="pt-24 pb-16 bg-[#F4F4F4] text-black">
-        <div class="px-6 md:px-20">
-            <h2 class="text-6xl md:text-[8vw] font-black uppercase tracking-tighter mb-20 leading-none">LET'S<br>TALK !</h2>
+        <div class="section-line grid grid-cols-1 md:grid-cols-12 gap-y-48" id="work">
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 text-[10px] uppercase font-bold tracking-widest text-zinc-500 border-t border-zinc-200 pt-10">
-                <div class="md:col-span-3 flex items-center gap-2">
-                    <span class="text-xs font-black text-black">WUSTUDIO</span> / © 2026
+            <div class="md:col-span-12 mb-10"><span class="micro-label">Selected Projects / 03</span></div>
+
+            <div class="md:col-span-8 reveal">
+                <a href="foodaily.html" class="project-card group block">
+                    <div class="img-wrapper aspect-[16/9]">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover">
+                    </div>
+                    <h2 class="project-title">iSEE Global Award — 品牌识别升级</h2>
+                    <p class="project-info">To B Industry / Visual System / 2023</p>
+                </a>
+            </div>
+
+            <div class="md:col-start-9 md:col-span-4 md:mt-32 reveal">
+                <a href="theatre.html" class="project-card group block">
+                    <div class="img-wrapper aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover">
+                    </div>
+                    <h2 class="project-title">Orange Sky Theatre — 品牌运营</h2>
+                    <p class="project-info">Cultural Tourism / Spatial / 2024</p>
+                </a>
+            </div>
+
+            <div class="md:col-start-2 md:col-span-10 reveal">
+                <a href="minions.html" class="project-card group block">
+                    <div class="img-wrapper aspect-video">
+                        <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-baseline px-1">
+                        <h2 class="project-title">Minions Run IP Campaign — 衍生品开发</h2>
+                        <p class="project-info">IP Extension / Product Design / 2021</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="px-8 py-24 border-t border-zinc-200 mt-40">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="text-[10px] font-black uppercase tracking-[0.5em] italic">让好的产品被更多人看见</div>
+            <div class="flex space-x-12">
+                <div><span class="micro-label">Social</span>
+                    <div class="flex flex-col mt-4 space-y-2 text-[10px] uppercase font-bold tracking-widest">
+                        <a href="#" class="hover:opacity-40">Behance</a>
+                        <a href="#" class="hover:opacity-40">Dribbble</a>
+                    </div>
                 </div>
-                <div class="md:col-start-5 md:col-span-4">
-                    <p>合作联系 / callme@wustudio.design</p>
-                </div>
-                <div class="md:col-start-10 md:col-span-3 md:text-right space-x-6">
-                    <a href="#" class="hover:text-black">Behance</a>
-                    <a href="#" class="hover:text-black">Dribbble</a>
+                <div><span class="micro-label">Contact</span>
+                    <div class="mt-4 text-[10px] uppercase font-bold tracking-widest">
+                        <a href="mailto:hello@wuzong.design" class="hover:opacity-40">hello@wuzong.design</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // 滚动淡入逻辑
-        const reveal = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach((el, index) => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-                    // 加入极短的延迟，形成交错浮现效果
-                    setTimeout(() => el.classList.add('active'), index * 50);
-                }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        };
-        window.addEventListener('scroll', reveal);
-        reveal(); // 初始调用
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
