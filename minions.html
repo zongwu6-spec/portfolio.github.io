@@ -2,36 +2,60 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minions Sport | Project</title>
+    <title>Project Details | Minions Sport</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body { background: #fff; color: #000; font-family: 'Inter', sans-serif; }
+        .hero-img { height: 90vh; overflow: hidden; clip-path: inset(0% 0% 0% 0%); animation: imgOpen 1.8s cubic-bezier(0.2, 1, 0.3, 1); }
+        @keyframes imgOpen { from { clip-path: inset(10% 10% 10% 10%); } to { clip-path: inset(0% 0% 0% 0%); } }
+        .archive-text { font-size: 11px; line-height: 2; letter-spacing: 0.05em; color: #666; }
+        .archive-title { font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; color: #000; }
+        .color-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 8px; border: 1px solid #eee; }
+    </style>
 </head>
-<body class="bg-[#FFD23F] text-black antialiased font-['Inter']">
-    <nav class="fixed top-0 w-full z-50 p-8 flex justify-between">
-        <a href="index.html" class="font-black tracking-tighter uppercase border-b-2 border-black">← Home</a>
-        <span class="text-[10px] font-mono font-black uppercase">Global IP / 03</span>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-50 p-10 flex justify-between mix-blend-difference text-black">
+        <a href="index.html" class="text-[11px] font-bold uppercase tracking-widest">← Index</a>
     </nav>
 
-    <header class="pt-40 px-6 md:px-16 text-center">
-        <h1 class="text-[15vw] leading-[0.8] font-black uppercase tracking-tighter italic mb-10">Minions</h1>
-        <div class="inline-block bg-black text-[#FFD23F] px-6 py-2 text-sm font-black uppercase tracking-widest mb-20">Licensed Property</div>
-        <div class="max-w-2xl mx-auto text-left border-l-4 border-black pl-8">
-            <p class="text-2xl font-bold leading-tight">严格执行 Universal 版权方指南，将国际 IP 转化为具备本土竞争力的体育衍生产品全案。</p>
-        </div>
-    </header>
+    <section class="hero-img bg-zinc-100">
+        <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover">
+    </section>
 
-    <section class="px-6 md:px-16 py-32 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="rounded-[2rem] overflow-hidden shadow-[20px_20px_0_0_#000] border-2 border-black">
-            <img src="https://images.unsplash.com/photo-1593359674241-55cd4bd7e44a?auto=format&fit=crop&q=80&w=1000" class="w-full">
+    <section class="px-6 md:px-12 py-32 grid grid-cols-1 md:grid-cols-12 gap-16">
+        <div class="md:col-span-4">
+            <div class="sticky top-32">
+                <h1 class="text-4xl font-light mb-16 italic">Minions<br>Sport Campaign</h1>
+                <div class="space-y-12">
+                    <div><span class="archive-title italic underline">Client</span><p class="archive-text uppercase">Universal Studios / Illumination</p></div>
+                    <div><span class="archive-title italic underline">Assets</span>
+                        <div class="flex items-center mt-2"><span class="color-dot bg-[#FFD23F]"></span><span class="archive-text">PANTONE MINION YELLOW</span></div>
+                        <div class="flex items-center mt-1"><span class="color-dot bg-[#005596]"></span><span class="archive-text">PANTONE MINION BLUE</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="rounded-[2rem] overflow-hidden shadow-[20px_20px_0_0_#000] border-2 border-black md:mt-20">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c274d?auto=format&fit=crop&q=80&w=1000" class="w-full">
+        
+        <div class="md:col-span-8">
+            <div class="archive-text text-lg text-black leading-relaxed mb-24 max-w-xl">
+                在国际 IP 的框架内创作，我们负责酷萌体育（Minions）运动系列的视觉延展与衍生品开发。设计重点在于严格遵循 Universal 的版权方指南，确保 IP 形象在商业落地中的高度一致性，同时注入运动时尚的视觉活力。
+            </div>
+            
+            <div class="space-y-24">
+                <div class="bg-zinc-50 overflow-hidden aspect-[16/10]"><img src="https://images.unsplash.com/photo-1542291026-7eec264c274d?auto=format&fit=crop&q=80&w=1600" class="w-full h-full object-cover"></div>
+                <div class="grid grid-cols-2 gap-12">
+                    <div class="bg-zinc-50 overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
+                    <div class="bg-zinc-50 overflow-hidden aspect-square"><img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-40 text-center uppercase font-black">
-        <p class="text-sm tracking-widest mb-4">End of Portfolio</p>
-        <a href="index.html" class="text-6xl hover:italic">Back to Work</a>
+    <footer class="py-32 text-center bg-zinc-50">
+        <a href="index.html" class="text-xs font-bold uppercase tracking-[0.2em] hover:opacity-50 transition">Back to Selected Works</a>
     </footer>
+
 </body>
 </html>
